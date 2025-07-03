@@ -71,31 +71,35 @@ Test frames, pierce Shadow DOM. Playwright selectors pierce shadow DOM and allow
 
 **Log in once**. Save the authentication state of the context and reuse it in all the tests. This bypasses repetitive log-in operations in each test, yet delivers full isolation of independent tests.
 
-### Powerful Tooling
-
-**[Codegen](https://playwright.dev/docs/codegen)**. Generate tests by recording your actions. Save them into any language.
-
-**[Playwright inspector](https://playwright.dev/docs/inspector)**. Inspect page, generate selectors, step through the test execution, see click points and explore execution logs.
-
-**[Trace Viewer](https://playwright.dev/docs/trace-viewer)**. Capture all the information to investigate the test failure. Playwright trace contains test execution screencast, live DOM snapshots, action explorer, test source and many more.
-
-Looking for Playwright for [TypeScript](https://playwright.dev/docs/intro), [JavaScript](https://playwright.dev/docs/intro), [Python](https://playwright.dev/python/docs/intro), [.NET](https://playwright.dev/dotnet/docs/intro), or [Java](https://playwright.dev/java/docs/intro)?
-
-## Examples
 
 
+#### How to your Run Test
 
-#### Page screenshot
+### Command line
+You can run your tests with the playwright test command. This will run your tests on all browsers as configured in the playwright.config file. Tests run in headless mode by default meaning no browser window will be opened while running the tests and results will be seen in the terminal.
+```Shell
+npx playwright test
+```
+### Run tests in UI mode
+We highly recommend running your tests with UI Mode for a better developer experience where you can easily walk through each step of the test and visually see what was happening before, during and after each step. UI mode also comes with many other features such as the locator picker, watch mode and more.
 
+```Shell
+npx playwright test --ui
+```
+### Run specific tests
 
-
-
-#### Evaluate in browser context
-
-
-
-#### Intercept network requests
-
+To run a single test file, pass in the name of the test file that you want to run.
+```Shell
+npx playwright test landing-page.spec.ts
+```
+To run a set of test files from different directories, pass in the names of the directories that you want to run the tests in.
+```Shell
+npx playwright test tests/todo-page/ tests/landing-page/
+```
+To run a test with a specific title, use the -g flag followed by the title of the test.
+```Shell
+npx playwright test -g "add a todo item"
+```
 
 
 ## Resources
