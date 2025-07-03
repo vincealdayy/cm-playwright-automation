@@ -73,7 +73,7 @@ Test frames, pierce Shadow DOM. Playwright selectors pierce shadow DOM and allow
 
 
 
-#### How to your Run Test
+# How to your Run Test
 
 ### Command line
 You can run your tests with the playwright test command. This will run your tests on all browsers as configured in the playwright.config file. Tests run in headless mode by default meaning no browser window will be opened while running the tests and results will be seen in the terminal.
