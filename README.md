@@ -46,7 +46,7 @@ You can optionally install only selected browsers, see [install browsers](https:
 * [API reference](https://playwright.dev/docs/api/class-playwright)
 
 
-# How to your Run Test
+## How to your Run Test
 
 ### Command line
 You can run your tests with the playwright test command. This will run your tests on all browsers as configured in the playwright.config file. Tests run in headless mode by default meaning no browser window will be opened while running the tests and results will be seen in the terminal.
