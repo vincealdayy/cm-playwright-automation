@@ -53,12 +53,20 @@ You can run your tests with the playwright test command. This will run your test
 ```Shell
 npx playwright test
 ```
+
+### Run tests in headed mode
+To run your tests in headed mode, use the --headed flag. This will give you the ability to visually see how Playwright interacts with the website.
+```Shell
+npx playwright test --headed
+```
+
 ### Run tests in UI mode
 We highly recommend running your tests with UI Mode for a better developer experience where you can easily walk through each step of the test and visually see what was happening before, during and after each step. UI mode also comes with many other features such as the locator picker, watch mode and more.
 
 ```Shell
 npx playwright test --ui
 ```
+
 ### Run specific tests
 
 To run a single test file, pass in the name of the test file that you want to run.
