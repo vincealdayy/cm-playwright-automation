@@ -10,7 +10,6 @@ test('login', async ({ page }) => {
   await page.fill('#username', process.env.USER_NAME!);
   await page.fill('#password', process.env.PASSWORD!);
   await page.click('button[value=Submit]');
-
   await page.waitForURL('https://tcmdevaws-head.contentmanager.tylerapp.com/tcm/');
 
   // Expect a URL "to contain" a substring.
