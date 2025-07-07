@@ -2,11 +2,13 @@ import {test as base, Page} from '@playwright/test'
 import { LoginPage } from '../src/pageObjects/login.po'
 import { DocumentSearchPage } from '../src/pageObjects/documentSearch.po';
 import { Navigation } from '../src/pageObjects/common/navigation.po';
+import {CreateDocumentPage} from '../src/pageObjects/common/createDocument.po';
 
 type smokeTestFixtures = {
   loginPage: LoginPage;
   documentSearchPage: DocumentSearchPage;
   navigation: Navigation;
+  createDocumentPage: CreateDocumentPage;
 };
 
 export const test = base.extend<smokeTestFixtures>({
@@ -24,6 +26,11 @@ export const test = base.extend<smokeTestFixtures>({
       documentSearchPage: async ({ loginPage }, use) => {
         const documentSearchPage = new DocumentSearchPage(loginPage.page);
         await use(documentSearchPage);
+      },
+
+      createDocumentPage: async ({ loginPage }, use) => {
+        const createDocumentPage = new CreateDocumentPage(loginPage.page);
+        await use(createDocumentPage);
       },
  
 
