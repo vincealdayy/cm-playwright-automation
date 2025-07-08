@@ -1,20 +1,22 @@
 import {Page, expect} from '@playwright/test'
 
 export class CreateDocumentPage {
-    constructor(private page: Page) {}
+  page: Page;
+    constructor(page: Page) {
+      this.page = page;
+    }
 
-    async createDoc() {
-        // Wait for the popup event *while* clicking the button
-        const [popup] = await Promise.all([
-          this.page.waitForEvent('popup'),
-          this.page.click('.createButton')
-        ]);
-        await popup.waitForLoadState(); // waits for the new tab to load its content
-      await expect(popup).toHaveURL(/ecmdocviewer/);
-        // Now you can interact with the new popup (tab)
-        // For example:
+    async clickOnSelectFiles() {
+      const [fileChooser] = await Promise.all([
+        this.page.waitForEvent('filechooser'),
         this.page.click('#btnSelecFiles')
-        return popup; // return the popup page if you want to keep using it
-      }
+      ]) 
+      
+    await fileChooser.setFiles('documentUploads/tylerDoc.pdf')
+    await this.page.waitForTimeout(10000)
+
+    await expect(this.page.frameLocator('#webdriver-1').locator('div#pageSection1')).toBeVisible()
+    }
+
  }
 
