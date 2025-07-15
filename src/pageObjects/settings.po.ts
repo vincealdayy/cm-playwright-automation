@@ -7,38 +7,42 @@ export class SettingsPage {
     constructor(page: Page) {
       this.page = page;
 
-      this.createUserBtn = page.locator('#securityItemFrame').contentFrame().getByRole('button', { name: 'Create' })
+      this.createUserBtn = page.locator('iframe[title="User Permissions and Groups content"]').contentFrame().getByRole('button', { name: 'Create' })
     }
 
+    async clickOnSecurity() {
+      await this.page.getByRole('button', { name: 'Security' }).click();
+      await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
+  }
+
     async clickOnUserPermission() {
-        await this.page.getByText('User Permissions and Groups').click();
+        await this.page.locator('#security div').first().click();
         await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
     }
 
     async clickOnCreateBtn() {
       //  await this.page.locator('#securityItemFrame').contentFrame().getByRole('button', { name: 'Create' }).click();
       await this.createUserBtn.click()
-      await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
     }
 
     async enterUserID(input: string){
-      await this.page.locator('#securityItemFrame').contentFrame().locator('#input-vaadin-text-field-101').fill(input);
-      await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
+      await this.page.locator('iframe[title="User Permissions and Groups content"]').contentFrame().getByRole('textbox', { name: 'User ID' }).fill(input);
+     
     }
 
     async enterUserName(input: string){
-      await this.page.locator('#securityItemFrame').contentFrame().locator('#input-vaadin-text-field-102').fill(input);
+      await this.page.locator('iframe[title="User Permissions and Groups content"]').contentFrame().getByRole('textbox', { name: 'LK_USER_NAME;' }).fill(input);
     }
 
     async clickVaadinSave() {
-      await this.page.locator('#securityItemFrame').contentFrame().getByRole('button', { name: 'Save' }).click();
+      await this.page.locator('iframe[title="User Permissions and Groups content"]').contentFrame().getByRole('button', { name: 'Save' }).click();
       await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
       
     }
 
     async columnSearch(value: string) {
-      await this.page.locator('#securityItemFrame').contentFrame().locator('#input-vaadin-text-field-62').fill(value)
-      await this.page.locator('#securityItemFrame').contentFrame().locator('#input-vaadin-text-field-63').click();
+      await this.page.locator('iframe[title="User Permissions and Groups content"]').contentFrame().getByRole('textbox', { name: 'User ID' }).fill(value)
+      await this.page.locator('iframe[title="User Permissions and Groups content"]').contentFrame().getByRole('textbox', { name: 'User Name' }).click();
       await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
     }
     async deleteUser() {

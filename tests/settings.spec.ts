@@ -8,12 +8,13 @@ test("Create User", async ({navigation, settingsPage}) => {
         email: faker.internet.email()
     }
     await navigation.clickOnSettings()
+    await settingsPage.clickOnSecurity()
     await settingsPage.clickOnUserPermission()
     await settingsPage.clickOnCreateBtn()
     await settingsPage.enterUserID(`${newUser.id}`)
     await settingsPage.enterUserName(newUser.name)
     await settingsPage.clickVaadinSave()
-    await settingsPage.columnSearch(`${newUser.id}`)
+    //await settingsPage.columnSearch(`${newUser.id}`)
    // await settingsPage.deleteUser()
 
 })

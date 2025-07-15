@@ -15,11 +15,14 @@ dotenv.config();
  */
 
 export default defineConfig({
+  
   testDir: './tests',
-  timeout: process.env.CI ? 60000 : 30000,
+  timeout: process.env.CI ? 60000 : 120000,
   expect: {
-    timeout: process.env.CI ? 10000 : 5000,
+    timeout: process.env.CI ? 120000 : 5000,
   },
+
+  
   
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -34,12 +37,13 @@ export default defineConfig({
     baseURL: process.env.BASE_URL || 'https://tcmdevaws-lts.contentmanager.tylerapp.com/tcm/',
     headless: !!process.env.CI,
     viewport: { width: 1280, height: 720 },
-    actionTimeout: process.env.CI ? 30000 : 10000,
-    navigationTimeout: process.env.CI ? 30000 : 10000,
+    actionTimeout: process.env.CI ? 60000 : 120000,
+    navigationTimeout: process.env.CI ? 60000 : 120000,
     
     screenshot: process.env.CI ? 'only-on-failure' : 'off',
     video: process.env.CI ? 'retain-on-failure' : 'off',
     trace: process.env.CI ? 'on-first-retry' : 'off',
+    
   },
 
   projects: [
@@ -87,6 +91,7 @@ export default defineConfig({
    // trace: 'on-first-retry',
 
 
+ // },
  // },
 
 

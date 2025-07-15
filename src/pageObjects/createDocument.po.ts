@@ -13,11 +13,13 @@ export class CreateDocumentPage {
     ]) 
     
     await fileChooser.setFiles('documentUploads/tylerDoc.pdf')
-    await this.page.waitForTimeout(10000)
     expect(this.page.locator('iframe#webviewer-1')).toBeVisible({timeout:20000})
+    await this.page.waitForLoadState('domcontentloaded')
+   
   }
 
   async selectDocType(option: string) {
+    
     await this.page.locator('input#docType').fill(option, {timeout: 500})
     // await this.page.keyboard.press('Enter') // #list-dropdown-option-tcw-autocomplete-idzgk-1
     //*[@id="list-dropdown-option-tcw-autocomplete-idzgk-1"]
@@ -52,7 +54,8 @@ export class CreateDocumentPage {
   }
 
   async clickElipsesAndDelete() {
-    await this.page.locator('//button[@aria-label="Open Actions"]').click()
+    await this.page.getByRole('button', { name: 'Open Actions' }).click()
+    await this.page.pause()
     await this.page.locator("//tcw-list-item[text()= 'Delete']").click()
     await this.page.waitForLoadState('domcontentloaded')
     await this.page.locator('#accept-button').click()

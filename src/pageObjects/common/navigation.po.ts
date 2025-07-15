@@ -26,7 +26,7 @@ constructor(private page: Page) {}
     }
 
     async clickOnSettings() {
-        await this.page.locator(`tcw-list-item#setup`).click()
+        await this.page.getByRole('button', { name: 'settings Settings' }).click()
         await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
     }
 
