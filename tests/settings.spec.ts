@@ -14,6 +14,6 @@ test("Create User", async ({navigation, settingsPage}) => {
     await settingsPage.enterUserName(newUser.name)
     await settingsPage.clickVaadinSave()
     await settingsPage.columnSearch(`${newUser.id}`)
-    await settingsPage.deleteUser()
+   // await settingsPage.deleteUser()
 
 })
