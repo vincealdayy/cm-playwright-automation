@@ -35,6 +35,7 @@ async loginValidUser() {
     await this.clicknext()
     await this.enterPassword()
     await this.clickLoginButton()
+    await this.page.context().storageState({path: ".auth/login.json"})
 }
 
 }
