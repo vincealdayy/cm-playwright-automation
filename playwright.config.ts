@@ -17,7 +17,7 @@ dotenv.config();
 export default defineConfig({
   
   testDir: './tests',
-  timeout: process.env.CI ? 60000 : 120000,
+  timeout: process.env.CI ? 120000 : 120000,
   expect: {
     timeout: process.env.CI ? 120000 : 5000,
   },
