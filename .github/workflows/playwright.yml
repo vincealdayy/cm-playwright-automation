@@ -22,6 +22,8 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install
     - name: Run Playwright tests
+    env:
+     BASE_URL: 'https://tcmdevaws-lts.contentmanager.tylerapp.com/tcm/'
       run: npx playwright test --workers=4
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

@@ -1,93 +1,63 @@
 {
   "cookies": [
     {
-      "name": "idsrv.session",
-      "value": "6D8BB6DC89C11F506822A774509E606E",
+      "name": ".AspNetCore.OpenIdConnect.Nonce.CfDJ8NkH2WjySy1Nvcw2srk-3TIFqK5G36-3zIrjNAOiAUJstiSWbBuZHKW7-vK7bRrCyM7scOtezO1rM9mvGIG7B-qBBnLjwbn78WxzqnYEyXjsoew3lyoH7lU_SIDq-tdNrffMWiRxlT_9w9ybyTOoo_FulchbZ6UKXxB4IYtSBwfN1fyE7v9WSiZ5J_o9sRFG8o56aXJKLqNtu1wlSlRC8AYtaQiAKUuc-U4Tzfh8F0vM7futrHz-0h0h3KlRFyxYFvlj7Zo9Y4NShXCE8TpK-WM",
+      "value": "N",
       "domain": "idgw.tcpqa.com",
-      "path": "/tg",
-      "expires": -1,
-      "httpOnly": false,
+      "path": "/tg/federation/tcmtmm/signin",
+      "expires": 1752689681.182586,
+      "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
-      "name": "idsrv",
-      "value": "CfDJ8NkH2WjySy1Nvcw2srk-3TLUWfqh0_wLQa6XQ8HbVqcbx9g68ESPQT118-Zm5lXfmvOsWcs-18gAx7LPFMTZUXGkA90kwlqn6M-WYG59lCrop38hq1-nIhAielfRlcDpw1M3GJTDsKNE5fMwe4NATgTeUda8bwG9yGe5JyD4vy76DJFZAdtXJXb6cUMXZdtgR41KZ7htdklA7UBMJAORA_hchwIhaGnPmLSIWBUP75viq9X2h8ItVpOxSujgBnSwzsCcZCXVtTQ97-5PSZEnHRFnE7yjC15RQCGj2eKdfQ217jwTGm9OWVCv0kJ14fooZWiXr8RFqbaGM0YCndhj-MkRsTjpXsjmBu5rT0YLn81mZdfNMS-6orzj-tJOEFTi_5hXRXwtoolUtIwA0wwblmjcYmpPMbdwlgtJaSwjEpZRQPhIqvHQXB1DwfJFn631WHvC6sC30qrFbD_tB__RvgR5j-SvkhEdkw7tyQx4xTJK8xKOfs1caUfK8jPWEgX94_xlbuRYDFVVKY6SnkBGmnV38whIaQlwDlEdgu4cSC_XZLNv0R2hj_UEdlz3Gw3vLZ9WgfTGORNnO8KuCxaUM_PnmPBBJCdqxiEBwtPpAryElvEfhBzFIhisziABeioaPPK7oY7aYtzD8yRzDKvNmnaygEzNHSAFvQQzQ2rsUc8o_PhJ6xyXcDqKYQYSiam4PenVL779I0VCF_kVjztNSutd9TfQSp-z_DdTicw2WIWJcS8ozeKXi78r2CxuCPZAq5pOpXgR5lKMJb2nmNWuk7tTM8fv9EP1XcgxQePrbLnXuSAYcrvL5NhhMAD4vbgIumkOErvsAuhfzjJNxLrIqyzkIQo0yk0qvOO8kk1Wwbferb7r_uURfNIi4mPiYBaoupblF7PCjNJv25REYVbGPWXG__6k-bRLH3OPuXXVcqDISx22WdcG3IT97dfnrEPY9HLPiYtD8VRZ-m_lnn4WOH6BjisKCW8lTqaamTjrnYlihuJAr2SOmafnHJhc_ZD32zLs67_nVg2SsZkrp8ZY7_C3HSHY-qxxr7AKJomga6eWOowuNo1_GPEOxgPaBDfz1tPRmeLrT8AOuC3iUrPRw3fbYb-qvGniva4D52fLiykJGAXnd67h6wlAeGP3L7mFuoyUOn3mPqM16NF27uEt14wLflRZWCNi_y7V7_iNBAJz3-hbfeeRVwU-XLl62rNGJBzRSaZHdmyIFDQYU-bw3-BsXouCicV5p9DrZzoNyNCYfOiBMAE1hneSZ_Dl2HfYrxZfPJiIIzzHuDuKAIIpRvy4ZmO3AQio_5hevUTieHPyxQi1CkI5EYYzQ8m8NyxuZ2XGOmYiO3y4pSy5uw_8HphCiR3JfD7YWNuoWmf9RvMDdYkPd8j32D1oRJ7sVOahX0QhYVuaHi2t-ORxreflJP8UVgn49d66ektiQbeiOc6b19VferAIIAvFa78DMO0aMs3oETtS8dJVesUbOzI6tRGXU83-vpEqKP3EVRacA-r7ialW9n4OsHqpqMhRZ_TEXFYdqkWiFrh4NKPu_3loEj_XfsTHLgLCIbO19r4E_jH8oDsKiI0pGkCaw7TCFnoxpuT2AMxL2EQMDO4ZHgg7zScKuCHSS9Qf5IXqHkW7J8TlSsyRZ0CCal_NsxsIYjC_l51c5YNfQGV-mE7YajwaRZf3J22PCokZ5FfZYiNL7fgFAsr6KkTHFpxKX6IEsQCL87cNOJArSGFV-Ezjg3uFJkHGSi6Cw6qb_rlaLZAC12uRXFR6KtHQqtBueHfOa8ofA4XGVq60OPN75UodE7g2lvgt7-sk1YxDUkxrDzPIgP4Q7dP9gH8InOgH7sQovtiCNDtBdPPR3w66As5ekDB_pZ0o0gKnYEHpXD5uyyoEeLOFYyZsqhkMIzFWnTtrxbSJhe1ZFzSg24jnoxn7xo2VP7HwYb6pjcyHAonrEjZLmmQe0cAL2cgDAxU6A9bjzArINXnQZwp1-DkIHJhYb-zKgJJOQhms5jsI2hec9lNVU_XaVMnjDwfclDaQdR8RukFWlsyZ7lGywdUyBSK_luudv6tyllAM52RHTXGGF1tWxNOw0i-Q85G7feU6kFHtHwyQANggM6mqYlkmNemsrREVwXYZdVA9I9R16N6FW89JKmPvHucXonNdKLQZMu5_2n6DODRkG1GvOBJw0ia-cC4bUlQvSWMs-kiyzhB8ozPTNFCvOtrzBTmVGypFG3mwxJZk-3OnreCdejMkOfKVlRtLIC5eaLEhPzLcgdBf2kC6yXlsYL8TNygPYa8zWemC2S3s6HUJuPLEjovubr_O8vuQBL97mNJ-mqLgAOqfcZIQIDL0Ag_dvWqLKhCJb9Ge0pQ2BhmcIyxznCDxD2OPWIfJEjADVZujjYSRvVIUtr6SBhxgtAOrME0kH7bjbrWXIDBwjn3RxRFMBJbrpgB3WdMRfVI47ASfhUA1xYbzsiCkZTz2Wwcyb8Zm1QZWOBniZWUPRw",
+      "name": ".AspNetCore.Correlation.OPo4f8wJwAi67CZ-JRNhPY_AornOGGLDk-7QIro_xVw",
+      "value": "N",
       "domain": "idgw.tcpqa.com",
-      "path": "/tg",
-      "expires": -1,
+      "path": "/tg/federation/tcmtmm/signin",
+      "expires": 1752689681.182791,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "DT",
-      "value": "DI1N1sodvV5RiqIgBjce1fWaQ",
+      "value": "DI1yU0eGUo6TC2FODyuW9M2Tw",
       "domain": "tyler-tcmtmm.oktapreview.com",
       "path": "/",
-      "expires": 1787234168.878449,
+      "expires": 1787248782.28514,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "oktaStateToken",
-      "value": "00VK85EqMZpwbN1aMjnKbhnVizKZ26qyGYLCNDR5Yd",
+      "value": "00RFLp9VWijSYDHR9dxpLT6pzbzg76v4hgB1n_BhV3",
       "domain": "tyler-tcmtmm.oktapreview.com",
       "path": "/",
-      "expires": 1752674475,
+      "expires": 1752692383,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
-      "name": "xids",
-      "value": "102bUbU8v2sQkqhk4SF7pJqFg",
-      "domain": "tyler-tcmtmm.oktapreview.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "sid",
-      "value": "102RGRR8bRhS9idg45CsTsOBQ",
-      "domain": "tyler-tcmtmm.oktapreview.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "JSESSIONID",
-      "value": "4511D485060844B9243995B1632C3E74",
+      "value": "2B81C56C36BB50FC23A7631E5F0F5B29",
       "domain": "tyler-tcmtmm.oktapreview.com",
       "path": "/",
       "expires": -1,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
-    },
-    {
-      "name": "proximity_f06b203602846fc97bda8e8a5a5a035a",
-      "value": "eyJ6aXAiOiJERUYiLCJwMnMiOiJtaDVhLVR1SjhBYnI3Z3ZzdHZ5bmZnIiwicDJjIjoxMDAwLCJ2ZXIiOiIxIiwiZW5jIjoiQTI1NkdDTSIsImFsZyI6IlBCRVMyLUhTNTEyK0EyNTZLVyJ9.eeD1ni4JtPQ6fnt7vFALPdFV1rwTnCyFSsooos9Xyh9Zct5IL0ORBQ.R4gk0iiIvBMviOJX.bPnokKYyXujo9T1REmm8eL3df24HGM7ibAwvZRrUxWLZgTNUmW71wBQDAsmQTaDuoCADZC0hPyrUZX4ArmHhdN--NE0kF6xKKwf3yHCw9yHlZGywl92idW5LQYlF4NrTkYDVEp-u8fV2LmaKNfUnsNtGR66HVEpnhOC6sXNYUhQSgA.3mQDwnpCHAVSfUbChamCzg",
-      "domain": "tyler-tcmtmm.oktapreview.com",
-      "path": "/",
-      "expires": 1784210175.90521,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
     }
   ],
   "origins": [
     {
-      "origin": "https://login.okta.com",
+      "origin": "https://tcmdevaws-lts.contentmanager.tylerapp.com",
       "localStorage": [
         {
-          "name": "okta_accounts",
-          "value": "[{\"id\":\"https://tyler-tcmtmm.oktapreview.com::cmemailcaptureqa@corp.tylertechnologies.com\",\"login\":\"cmemailcaptureqa@corp.tylertechnologies.com\",\"displayName\":\"Test Test\",\"origin\":\"https://tyler-tcmtmm.oktapreview.com\",\"lastUpdated\":\"2025-07-16T13:56:15.579Z\"}]"
+          "name": "wm-state",
+          "value": "{\"currentFlow\":{}}"
         }
       ]
     }

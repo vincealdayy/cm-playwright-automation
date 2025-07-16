@@ -28,7 +28,6 @@ async clickLoginButton() {
 
     await this.page.click('#okta-signin-submit')
     await this.page.waitForURL('https://tcmdevaws-lts.contentmanager.tylerapp.com/tcm/')
-    await this.page.waitForTimeout(10000)
 }
 
 async loginValidUser() {
