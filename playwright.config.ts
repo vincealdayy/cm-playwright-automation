@@ -13,46 +13,100 @@ dotenv.config();
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
 export default defineConfig({
-  timeout: 60000,
-  // 60 seconds for ALL tests
+  
   testDir: './tests',
-  /* Run tests in files in parallel */
+  timeout: process.env.CI ? 120000 : 120000,
+  expect: {
+    timeout: process.env.CI ? 120000 : 5000,
+  },
+
+  
+  
   fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  
+  reporter: process.env.CI 
+    ? [['html'], ['github']] 
+    : [['list'], ['html']],
+    
   use: {
+    baseURL: process.env.BASE_URL || 'https://tcmdevaws-lts.contentmanager.tylerapp.com/tcm/',
+    headless: !!process.env.CI,
+    viewport: { width: 1280, height: 720 },
+    actionTimeout: process.env.CI ? 60000 : 120000,
+    navigationTimeout: process.env.CI ? 60000 : 120000,
+    
+    screenshot: process.env.CI ? 'only-on-failure' : 'on',
+    video: process.env.CI ? 'retain-on-failure' : 'on',
+    trace: process.env.CI ? 'on-first-retry' : 'on',
+    
+  },
+
+  projects: [
+    {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'],
+        // CI-specific browser args
+        launchOptions: process.env.CI ? {
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
+        } : {}
+      },
+    },
+  ],
+});
+
+
+
+//export default defineConfig({
+
+  
+  //timeout: 120000,
+  // 60 seconds for ALL tests
+ // testDir: './tests',
+  /* Run tests in files in parallel */
+ // fullyParallel: true,
+  /* Fail the build on CI if you accidentally left test.only in the source code. */
+  //forbidOnly: !!process.env.CI,
+  /* Retry on CI only */
+ // retries: process.env.CI ? 2 : 0,
+  /* Opt out of parallel tests on CI. */
+  //workers: process.env.CI ? 1 : undefined,
+  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+ // reporter: 'html',
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+
+  
+//use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: "https://tcmdevaws-lts.contentmanager.tylerapp.com/tcm/",
+   // baseURL: "https://tcmdevaws-lts.contentmanager.tylerapp.com/tcm/",
    // baseURL: 'https://tcmdevaws-head.contentmanager.tylerapp.com/tcm/',
 
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+   // trace: 'on-first-retry',
 
 
-  },
+ // },
+ // },
 
 
   
   /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+ // projects: [
+   // {
+    //  name: 'chromium',
+    //  use: { ...devices['Desktop Chrome'] },
+    //},
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+   // {
+   //   name: 'webkit',
+   //   use: { ...devices['Desktop Safari'] },
+   // },
 
     /* Test against mobile viewports. */
     // {
@@ -73,7 +127,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  ],
+  //],
 
   /* Run your local dev server before starting the tests */
   // webServer: {
@@ -81,4 +135,4 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
+//});

@@ -1,0 +1,65 @@
+{
+  "cookies": [
+    {
+      "name": ".AspNetCore.OpenIdConnect.Nonce.CfDJ8NkH2WjySy1Nvcw2srk-3TIFqK5G36-3zIrjNAOiAUJstiSWbBuZHKW7-vK7bRrCyM7scOtezO1rM9mvGIG7B-qBBnLjwbn78WxzqnYEyXjsoew3lyoH7lU_SIDq-tdNrffMWiRxlT_9w9ybyTOoo_FulchbZ6UKXxB4IYtSBwfN1fyE7v9WSiZ5J_o9sRFG8o56aXJKLqNtu1wlSlRC8AYtaQiAKUuc-U4Tzfh8F0vM7futrHz-0h0h3KlRFyxYFvlj7Zo9Y4NShXCE8TpK-WM",
+      "value": "N",
+      "domain": "idgw.tcpqa.com",
+      "path": "/tg/federation/tcmtmm/signin",
+      "expires": 1752689681.182586,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": ".AspNetCore.Correlation.OPo4f8wJwAi67CZ-JRNhPY_AornOGGLDk-7QIro_xVw",
+      "value": "N",
+      "domain": "idgw.tcpqa.com",
+      "path": "/tg/federation/tcmtmm/signin",
+      "expires": 1752689681.182791,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "DT",
+      "value": "DI1yU0eGUo6TC2FODyuW9M2Tw",
+      "domain": "tyler-tcmtmm.oktapreview.com",
+      "path": "/",
+      "expires": 1787248782.28514,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "oktaStateToken",
+      "value": "00RFLp9VWijSYDHR9dxpLT6pzbzg76v4hgB1n_BhV3",
+      "domain": "tyler-tcmtmm.oktapreview.com",
+      "path": "/",
+      "expires": 1752692383,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "JSESSIONID",
+      "value": "2B81C56C36BB50FC23A7631E5F0F5B29",
+      "domain": "tyler-tcmtmm.oktapreview.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://tcmdevaws-lts.contentmanager.tylerapp.com",
+      "localStorage": [
+        {
+          "name": "wm-state",
+          "value": "{\"currentFlow\":{}}"
+        }
+      ]
+    }
+  ]
+}

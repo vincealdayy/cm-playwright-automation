@@ -1,5 +1,5 @@
 import {expect, Page} from '@playwright/test'
-import { CreateDocumentPage } from './createDocument.po';
+import { CreateDocumentPage } from '../createDocument.po';
 
 export class Navigation {
 
@@ -24,4 +24,13 @@ constructor(private page: Page) {}
         expect(this.page.url).toContain('ecmdocviewer')
         
     }
+
+    async clickOnSettings() {
+        await this.page.getByRole('button', { name: 'settings Settings' }).click()
+        await this.page.waitForLoadState('domcontentloaded', {timeout: 30000})
+    }
+
+    
+
+    // [title="Add Entry"]
 }
