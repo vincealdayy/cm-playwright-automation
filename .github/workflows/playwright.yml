@@ -13,8 +13,8 @@ jobs:
     - name: Create .env file
       run: |
         {
-          echo "USER_NAME=${{ secrets.USER_NAME }}"
-          echo "PASSWORD=${{ secrets.PASSWORD }}"
+          echo "USER_NAME=${{ cmemailcaptureqa@corp.tylertechnologies.com }}"
+          echo "PASSWORD=${{ Da4ztZxDkfhwm$1 }}"
         } > .env
     - uses: actions/setup-node@v4
       with:
