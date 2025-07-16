@@ -40,9 +40,9 @@ export default defineConfig({
     actionTimeout: process.env.CI ? 60000 : 120000,
     navigationTimeout: process.env.CI ? 60000 : 120000,
     
-    screenshot: process.env.CI ? 'only-on-failure' : 'off',
-    video: process.env.CI ? 'retain-on-failure' : 'off',
-    trace: process.env.CI ? 'on-first-retry' : 'off',
+    screenshot: process.env.CI ? 'only-on-failure' : 'on',
+    video: process.env.CI ? 'retain-on-failure' : 'on',
+    trace: process.env.CI ? 'on-first-retry' : 'on',
     
   },
 
