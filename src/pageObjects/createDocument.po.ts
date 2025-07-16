@@ -1,9 +1,15 @@
-import {Page, expect, } from '@playwright/test'
+import { Page, expect, Locator } from '@playwright/test'
+import { waitForInput } from '../helper/helper';
 
 export class CreateDocumentPage {
   page: Page;
+
+  readonly docTypeDropdwn: Locator;
+
     constructor(page: Page) {
       this.page = page;
+
+      this.docTypeDropdwn = page.getByRole('combobox', { name: 'Choose Document Type' })
     }
 
   async clickOnSelectFiles() {
@@ -14,18 +20,19 @@ export class CreateDocumentPage {
     
     await fileChooser.setFiles('documentUploads/tylerDoc.pdf')
     expect(this.page.locator('iframe#webviewer-1')).toBeVisible({timeout:20000})
-    await this.page.waitForLoadState('domcontentloaded')
+    // await this.page.waitForLoadState('networkidle')
+    await this.page.waitForTimeout(10000)
    
   }
 
   async selectDocType(option: string) {
-    
-    await this.page.locator('input#docType').fill(option, {timeout: 500})
-    // await this.page.keyboard.press('Enter') // #list-dropdown-option-tcw-autocomplete-idzgk-1
-    //*[@id="list-dropdown-option-tcw-autocomplete-idzgk-1"]
-
-    this.page.locator('[role="option"][aria-disabled="false"]').filter({ hasText: `${option}` }).click()
-    await this.page.waitForTimeout(5000)
+    await waitForInput(this.docTypeDropdwn)
+    await this.docTypeDropdwn.fill(option)
+    await this.page.keyboard.press('Enter')
+    // await this.page.locator('input#docType').fill(option, {timeout: 500})
+    // await t
+    await this.page.waitForTimeout(20000)
+    // await this.page.pause()
   }
 
   async enterVendorNumber(number: string) {

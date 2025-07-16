@@ -3,7 +3,7 @@ import { test } from '../fixtures/smokeTestFixture'
 
 test("Create User", async ({navigation, settingsPage}) => {
     const newUser  = {
-        id: faker.number.int({max: 99999}),
+        id: faker.number.int({max: 999}),
         name: faker.person.firstName(),
         email: faker.internet.email()
     }
@@ -14,7 +14,7 @@ test("Create User", async ({navigation, settingsPage}) => {
     await settingsPage.enterUserID(`${newUser.id}`)
     await settingsPage.enterUserName(newUser.name)
     await settingsPage.clickVaadinSave()
-    //await settingsPage.columnSearch(`${newUser.id}`)
+    await settingsPage.columnSearchUserId(`${newUser.id}`)
    // await settingsPage.deleteUser()
 
 })
