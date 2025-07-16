@@ -67,6 +67,27 @@ We highly recommend running your tests with UI Mode for a better developer exper
 npx playwright test --ui
 ```
 
+
+### Run tests in Debug mode
+Run in debug mode
+Run your tests with the --debug flag to open the inspector. This configures Playwright for debugging and opens the inspector. Additional useful defaults are configured when --debug is used:
+
+Browsers launch in headed mode
+Default timeout is set to 0 (= no timeout)
+Debug all tests on all browsers
+To debug all tests run the test command with the --debug flag. This will run tests one by one, and open the inspector and a browser window for each test.
+
+```Shell
+npx playwright test --debug
+``
+
+Debug one test on all browsers
+To debug one test on a specific line, run the test command followed by the name of the test file and the line number of the test you want to debug, followed by the --debug flag. This will run a single test in each browser configured in your playwright.config and open the inspector.
+
+```Shell
+npx playwright test example.spec.ts:10 --debug
+``
+
 ### Run specific tests
 
 To run a single test file, pass in the name of the test file that you want to run.
