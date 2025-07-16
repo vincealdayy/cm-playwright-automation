@@ -30,7 +30,6 @@ export class CreateDocumentPage {
     await this.docTypeDropdwn.fill(option)
     await this.page.keyboard.press('Enter')
     // await this.page.locator('input#docType').fill(option, {timeout: 500})
-    // await t
     await this.page.waitForTimeout(20000)
     // await this.page.pause()
   }
