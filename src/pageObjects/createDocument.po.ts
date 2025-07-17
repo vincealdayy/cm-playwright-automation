@@ -5,11 +5,15 @@ export class CreateDocumentPage {
   page: Page;
 
   readonly docTypeDropdwn: Locator;
+  readonly VendorNumber: Locator;
+  readonly clickOnDropdwn: Locator;
 
     constructor(page: Page) {
       this.page = page;
 
       this.docTypeDropdwn = page.getByRole('combobox', { name: 'Choose Document Type' })
+      this.VendorNumber = page.locator('input#VendorNumber')
+      this.clickOnDropdwn = page.getByRole('option', { name: '-B' })
     }
 
   async clickOnSelectFiles() {
@@ -28,14 +32,18 @@ export class CreateDocumentPage {
   async selectDocType(option: string) {
     await waitForInput(this.docTypeDropdwn)
     await this.docTypeDropdwn.fill(option)
-    await this.page.keyboard.press('Enter')
+    await this.page.getByRole('option', { name: '-B' }).click()
+    await this.page.waitForTimeout(5000)
+    //await this.page.keyboard.press('Enter')
     // await this.page.locator('input#docType').fill(option, {timeout: 500})
-    await this.page.waitForTimeout(20000)
-    // await this.page.pause()
+    
+
   }
 
   async enterVendorNumber(number: string) {
-    await this.page.locator('input#VendorNumber').fill(number)
+    //await this.page.locator('input#VendorNumber').fill(number)
+    await waitForInput(this.VendorNumber)
+    await this.VendorNumber.fill(number)
   }
 
   async enterYear(year: string) {
@@ -43,7 +51,7 @@ export class CreateDocumentPage {
   }
 
   async clickOnSaveBtn() {
-    await this.page.locator('button#saveDocument').click()
+    await this.page.getByRole('button', { name: 'Save' }).click()
     await this.page.waitForLoadState('domcontentloaded')
   }
 
@@ -58,15 +66,15 @@ export class CreateDocumentPage {
         return false
       }
   }
-
   async clickElipsesAndDelete() {
     await this.page.getByRole('button', { name: 'Open Actions' }).click()
-    await this.page.pause()
-    await this.page.locator("//tcw-list-item[text()= 'Delete']").click()
+    await this.page.getByRole('menuitem', { name: 'Delete' }).click()
     await this.page.waitForLoadState('domcontentloaded')
-    await this.page.locator('#accept-button').click()
-    //await expect(this.isToastVisible).toBeTruthy()
+    await this.page.getByRole('button', { name: 'Yes' }).click()
+    await expect(this.isToastVisible).toBeTruthy()
   }
+
+
 
  }
 
