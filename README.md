@@ -15,8 +15,13 @@ Playwright is a framework for Web Testing and Automation. It allows testing [Chr
 
 ## Installation
 
-Playwright has its own test runner for end-to-end tests, we call it Playwright Test.
+Please install node.js first in your computer else download it on our workspace hub.
 
+**In your terminal:**
+```Shell
+#HTTPS
+git clone https://github.com/tyler-technologies/cm-automation-playwright.git
+```
 ### Using init command
 
 The easiest way to get started with Playwright Test is to run the init command.
